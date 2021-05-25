@@ -1,0 +1,34 @@
+<div class="repos-content">
+  <div class="head">
+    <h1>{{user}}'s Repositories <- <a [routerLink]="['/users']">back</a></h1>
+    <div class="selectors">
+      <div class="selector">
+        <app-dropdown
+          [listItems]="sortList"
+          [placeholder]="'Order By'"
+          (opener)="getValue(true, $event)"
+        ></app-dropdown>
+      </div>
+      <div class="selector checker">
+        <label for="checkbox">Ascending</label>
+        <input type="checkbox" id="checkbox" [(ngModel)]="asc" (ngModelChange)="getValue(false, asc)">
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <div *ngFor="let repo of repos" class="repos-list">
+      <div class="left">
+        <div><span>Full Name</span> - {{repo.fullName}}</div>
+        <div><span>Stargazers</span> - {{repo.stargazers}}</div>
+        <div><span>Watchers</span> - {{repo.watchers}}</div>
+        <div><span>Issues</span> - {{repo.issues}}</div>
+      </div>
+      <div class="right">
+        <div><span>Forks</span> - {{repo.forks}}</div>
+        <div><span>Language</span> - {{repo.language}}</div>
+        <div><span>License</span> - {{repo.license ? repo.license.name : 'Not Found'}}</div>
+        <div><span>Last Updated</span> - {{repo.lastUpdated}}</div>
+      </div>
+    </div>
+  </div>
+</div>

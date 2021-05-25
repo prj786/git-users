@@ -1,0 +1,5 @@
+<div class="pagination">
+  <div class="prev" *ngIf="prevNumber" (click)="goTo(prevNumber)">{{prevNumber}}</div>
+  <div class="active">{{activeNumber}}</div>
+  <div class="next" (click)="goTo(nextNumber)">{{nextNumber}}</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="dropdown" (click)="opened = !opened">
+  <span>{{ selectedName || placeholder}}</span>
+  <div class="icon">
+    <fa-icon [icon]="arrow"></fa-icon>
+  </div>
+  <ul [ngClass]="{'opened': opened}">
+    <li *ngIf="selectAll" (click)="changeValue(null)">Any</li>
+    <ng-container *ngFor="let item of listItems">
+      <li (click)="changeValue(item)">{{ item.name }}</li>
+    </ng-container>
+  </ul>
+</div>

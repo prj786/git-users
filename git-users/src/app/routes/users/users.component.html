@@ -1,0 +1,42 @@
+<div class="container">
+  <!-- Inputs -->
+  <div class="header">
+    <div class="search">
+      <input type="text"
+             name="search"
+             placeholder="search"
+             [(ngModel)]="searchValue"
+             (ngModelChange)="searchData()" />
+    </div>
+    <div class="selector">
+      <app-dropdown
+        [listItems]="typeSelectors"
+        [selectAll]="true"
+        [placeholder]="'type'"
+        (opener)="getValue(false, $event)"
+      ></app-dropdown>
+    </div>
+    <div class="selector">
+      <app-dropdown
+        [listItems]="countSelectors"
+        [placeholder]="queryParams.per_page.toString()"
+        (opener)="getValue(true, $event)"
+      ></app-dropdown>
+    </div>
+  </div>
+
+  <!-- Users -->
+  <div class="body">
+    <div class="user-content" *ngIf="gitUser.length; else noResult">
+      <div *ngFor="let user of gitUser">
+        <app-info [userInfo]="user"></app-info>
+      </div>
+    </div>
+    <ng-template #noResult>
+      No Result found!
+    </ng-template>
+    <div class="page-changer" *ngIf="!found">
+      <app-pagination [reset]="reset" (pageTo)="pageTo($event)"></app-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    cursor: pointer;
+    font-size: 14px;
+    color: #cfd0d1;
+    opacity: 0.8;
+    margin: 0 10px;
+  }
+  .active {
+    color: #1c87c9;
+    font-size: 16px;
+  }
+}

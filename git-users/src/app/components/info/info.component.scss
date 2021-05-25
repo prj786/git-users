@@ -1,0 +1,31 @@
+.user {
+  width: 350px;
+  height: 200px;
+  padding: 15px;
+  border: 1px solid #1c87c9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 20px;
+  img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+  .icon {
+    color: #a7a7ff;
+    margin-top: 50px;
+  }
+  .text {
+    p {
+      font-size: 16px;
+      span {
+        font-size: 18px;
+        color: #1c87c9;
+      }
+    }
+  }
+}

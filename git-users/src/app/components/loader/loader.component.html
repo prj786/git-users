@@ -1,0 +1,6 @@
+<div *ngIf="loading | async" class="page-overlay">
+  <div class="spinner"></div>
+</div>
+<div *ngIf="error" class="page-overlay">
+  <p>error with status code: <span>{{error}}</span></p>
+</div>

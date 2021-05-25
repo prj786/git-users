@@ -1,0 +1,12 @@
+<div class="user">
+  <img [src]="userInfo.avatar" [alt]="userInfo.name">
+  <div class="text">
+    <p><span>User:</span> {{userInfo.name}}</p>
+    <p><span>Type:</span> {{userInfo.type}}</p>
+    <div class="icon">
+      <a [routerLink]="['/users/' + userInfo.name + '/repos']">
+        see more <fa-icon [icon]="arrowRight"></fa-icon>
+      </a>
+    </div>
+  </div>
+</div>
